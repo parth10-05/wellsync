@@ -419,9 +419,11 @@ export default function ExerciseLibrary() {
                     {selectedExercise.category}
                   </span>
                   <span className="mx-2">•</span>
-                  <span className={`text-sm ${getDifficultyColor(selectedExercise.difficulty)}`}>
-                    {selectedExercise.difficulty?.charAt(0).toUpperCase() + selectedExercise.difficulty?.slice(1)}
-                  </span>
+                  {selectedExercise.difficulty && (
+                    <span className={`text-sm ${getDifficultyColor(selectedExercise.difficulty)}`}>
+                      {selectedExercise.difficulty.charAt(0).toUpperCase() + selectedExercise.difficulty.slice(1)}
+                    </span>
+                  )}
                 </div>
               </div>
               
