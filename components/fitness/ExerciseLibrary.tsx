@@ -319,10 +319,12 @@ export default function ExerciseLibrary() {
                   
                   <div className="flex items-center text-sm text-neutral-500 dark:text-neutral-400 mb-3">
                     <FiTarget className="mr-1" />
-                    <span className={`${getDifficultyColor(exercise.difficulty)}`}>
-                      {exercise.difficulty?.charAt(0).toUpperCase() + exercise.difficulty?.slice(1)}
-                    </span>
-                    <span className="mx-2">•</span>
+                    {exercise.difficulty && (
+                      <span className={`${getDifficultyColor(exercise.difficulty)}`}>
+                        {exercise.difficulty.charAt(0).toUpperCase() + exercise.difficulty.slice(1)}
+                      </span>
+                    )}
+                    {exercise.difficulty && <span className="mx-2">•</span>}
                     <span>{exercise.equipment}</span>
                   </div>
                   
